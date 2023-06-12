@@ -3,16 +3,20 @@ import {ITodo} from '../types/data'
 
 const TodoItem = ({id, title, complete, toggle, remove}: TodoItemProps) => {
   return (
-    <div>
-      <input
-        type="checkbox"
-        checked={complete}
-        onChange={() => toggle(id)}
-      />
-      {title}
-      <button onClick={() => remove(id)}>
-        X
-      </button>
+    <div className="todo-item">
+      <label>
+        <input
+          className="real-checkbox"
+          type="checkbox"
+          name="coding-notes"
+          onChange={() => toggle(id)}
+          checked={complete}
+        />
+        <span className="custom-checkbox"/>
+        <span className="todo-title">
+          {title}
+        </span>
+      </label>
     </div>
   )
 }

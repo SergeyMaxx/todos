@@ -4,7 +4,7 @@ import TodoItem from './todoItem'
 
 const TodoList = ({items, toggle, remove}: TodoListProps) => {
   return (
-    <>
+    <div className="todo-list">
       {items.map(item => (
         <TodoItem
           key={item.id}
@@ -15,7 +15,7 @@ const TodoList = ({items, toggle, remove}: TodoListProps) => {
           remove={remove}
         />
       ))}
-    </>
+    </div>
   )
 }
 

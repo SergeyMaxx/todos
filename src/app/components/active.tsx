@@ -8,7 +8,7 @@ const Active = () => {
   const activeTodos = todos.filter(todo => !todo.complete)
 
   return (
-    <div>
+    <div className="todos-active">
       {activeTodos.map(item => (
         <TodoItem
           key={item.id}

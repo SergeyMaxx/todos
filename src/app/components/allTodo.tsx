@@ -25,17 +25,6 @@ const AllTodo = () => {
     }
   }
 
-  // const remove = (id: number): void => {
-  //   setTodos(todos.filter(todo => todo.id !== id))
-  // }
-  //
-  // const toggle = (id: number): void => {
-  //   setTodos(todos.map(todo => todo.id === id
-  //     ? {...todo, complete: !todo.complete}
-  //     : todo
-  //   ))
-  // }
-
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus()
@@ -43,23 +32,26 @@ const AllTodo = () => {
   }, [])
 
   return (
-    <>
-      <input
-        type="text"
-        placeholder="enter text"
-        value={value}
-        onChange={e => setValue(e.target.value)}
-        ref={inputRef}
-      />
-      <button onClick={addTodo}>
-        Add
-      </button>
+    <div className="todo-container">
+      <div className="todo-wrap">
+        <input
+          className="todo-input"
+          type="text"
+          placeholder="What needs to be done?"
+          value={value}
+          onChange={e => setValue(e.target.value)}
+          ref={inputRef}
+        />
+        <button className="todo-add" onClick={addTodo}>
+          Add
+        </button>
+      </div>
       <TodoList
         items={todos}
         toggle={toggle}
         remove={remove}
       />
-    </>
+    </div>
   )
 }
 

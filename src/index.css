@@ -1,1 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
 
+.header {
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  font-family: "Microsoft JhengHei UI Light", serif;
+  font-size: 150px;
+  color: #e9dad9;
+  background: #f3f3f4;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.todo-wrap {
+  display: flex;
+  justify-content: center;
+  background: #f2f2f3;
+}
+
+.todo-input {
+  padding: 20px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+::placeholder {
+  font-size: 20px;
+  color: #ead5d6;
+  font-style: italic;
+}
+
+.todo-add {
+  padding: 0 40px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.todo-list {
+  min-height: 595px;
+  background: #fdfdfe;
+}
+
+.todos-active {
+  min-height: 595px;
+  margin-top: 67px;
+}
+
+.todo-item {
+  padding: 20px;
+  border-bottom: 1px solid #e9dad9;
+  font-family: "Segoe UI", serif;
+  font-size: 33px;
+}
+
+/*Чекбокс*/
+
+.real-checkbox {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border: 2px solid #cee0de;
+  border-radius: 50%;
+  vertical-align: sub;
+  margin-right: 30px;
+}
+
+.custom-checkbox::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('./app/assets/check.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  margin-top: 1px;
+  transition: 0.1s ease-in;
+}
+
+.real-checkbox:checked + .custom-checkbox::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.real-checkbox:checked ~ .todo-title {
+  color: #d8d8d9;
+  text-decoration: line-through;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  height: 109px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.nav-link {
+  font-size: 25px;
+  font-family: "Segoe UI", serif;
+  color: #7f7f80;
+  padding: 10px;
+}
+
+.focus {
+  border: 1px solid #ead5d6;
+  border-radius: 5px;
+}
+
+.nav-item {
+  font-size: 25px;
+  font-family: "Segoe UI", serif;
+  color: #7f7f80;
+}
+
+.nav-button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
