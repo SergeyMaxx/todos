@@ -1,7 +1,7 @@
 import React from 'react'
 import {ITodo} from '../types/data'
 
-const TodoItem = ({id, title, complete, toggle, remove}: TodoItemProps) => {
+const TodoItem = ({id, title, complete, toggle}: TodoItemProps) => {
   return (
     <div className="todo-item">
       <label>
@@ -23,7 +23,6 @@ const TodoItem = ({id, title, complete, toggle, remove}: TodoItemProps) => {
 
 interface TodoItemProps extends ITodo {
   toggle: (id: number) => void
-  remove: (id: number) => void
 }
 
 export default TodoItem

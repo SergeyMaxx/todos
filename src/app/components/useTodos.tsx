@@ -18,10 +18,6 @@ const TodosProvider = ({children}: { children: React.ReactNode }) => {
       : []
   )
 
-  const remove = (id: number): void => {
-    setTodos(todos.filter(todo => todo.id !== id))
-  }
-
   const toggle = (id: number): void => {
     setTodos(todos.map(todo => todo.id === id
       ? {...todo, complete: !todo.complete}
@@ -33,7 +29,6 @@ const TodosProvider = ({children}: { children: React.ReactNode }) => {
     <TodosContext.Provider value={{
       todos,
       setTodos,
-      remove,
       toggle,
     }}>
       {children}
@@ -44,7 +39,6 @@ const TodosProvider = ({children}: { children: React.ReactNode }) => {
 interface TodosContextType {
   todos: ITodo[]
   setTodos: (todos: ITodo[]) => void
-  remove: (id: number) => void
   toggle: (id: number) => void
 }
 

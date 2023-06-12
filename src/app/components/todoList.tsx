@@ -2,7 +2,7 @@ import React from 'react'
 import {ITodo} from '../types/data'
 import TodoItem from './todoItem'
 
-const TodoList = ({items, toggle, remove}: TodoListProps) => {
+const TodoList = ({items, toggle}: TodoListProps) => {
   return (
     <div className="todo-list">
       {items.map(item => (
@@ -12,7 +12,6 @@ const TodoList = ({items, toggle, remove}: TodoListProps) => {
           title={item.title}
           complete={item.complete}
           toggle={toggle}
-          remove={remove}
         />
       ))}
     </div>
@@ -22,7 +21,6 @@ const TodoList = ({items, toggle, remove}: TodoListProps) => {
 interface TodoListProps {
   items: ITodo[]
   toggle: (id: number) => void
-  remove: (id: number) => void
 }
 
 export default TodoList

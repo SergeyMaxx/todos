@@ -4,7 +4,7 @@ import TodoItem from './todoItem'
 
 const Active = () => {
   const {todos} = useTodos()
-  const {remove, toggle} = useTodos()
+  const {toggle} = useTodos()
   const activeTodos = todos.filter(todo => !todo.complete)
 
   return (
@@ -16,7 +16,6 @@ const Active = () => {
           title={item.title}
           complete={item.complete}
           toggle={toggle}
-          remove={remove}
         />
       ))}
     </div>

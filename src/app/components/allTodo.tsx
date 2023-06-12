@@ -7,7 +7,7 @@ const AllTodo = () => {
   const [value, setValue] = useState('')
   const {todos, setTodos} = useTodos()
   const inputRef = useRef<HTMLInputElement>(null)
-  const {remove, toggle} = useTodos()
+  const {toggle} = useTodos()
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
@@ -49,7 +49,6 @@ const AllTodo = () => {
       <TodoList
         items={todos}
         toggle={toggle}
-        remove={remove}
       />
     </div>
   )

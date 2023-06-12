@@ -78,7 +78,6 @@ interface ActiveType {
   All: boolean
   Active: boolean
   Completed: boolean
-
   [key: string]: boolean
 }
 
