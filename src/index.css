@@ -209,4 +209,8 @@
     width: 15px;
     height: 15px;
   }
+
+  .todo-list {
+    min-height: 588px;
+  }
 }
