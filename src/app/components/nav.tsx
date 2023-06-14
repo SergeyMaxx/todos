@@ -39,7 +39,7 @@ const Nav = () => {
     <div className="nav-container">
       <span className="nav-item">{activeTodos.length} items left</span>
       <ul className="nav">
-        <li onClick={e => getActive(e)}>
+        <li onClick={getActive}>
           <Link
             className={'nav-link ' + (active.All ? 'focus' : '')}
             to="/"
@@ -47,7 +47,7 @@ const Nav = () => {
             All
           </Link>
         </li>
-        <li onClick={e => getActive(e)}>
+        <li onClick={getActive}>
           <Link
             className={'nav-link ' + (active.Active ? 'focus' : '')}
             to="/active"
@@ -55,7 +55,7 @@ const Nav = () => {
             Active
           </Link>
         </li>
-        <li onClick={e => getActive(e)}>
+        <li onClick={getActive}>
           <Link
             className={'nav-link ' + (active.Completed ? 'focus' : '')}
             to="/completed"

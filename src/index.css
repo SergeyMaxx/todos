@@ -152,3 +152,61 @@
   cursor: pointer;
   background: transparent;
 }
+
+@media (max-width: 800px) {
+  .nav-link, .nav-button, .nav-item {
+    font-size: 16px;
+  }
+
+  .nav {
+    width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+  }
+
+  .header {
+    height: 70px;
+    font-size: 50px;
+  }
+
+  .todo-input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  ::placeholder {
+    font-size: 16px;
+  }
+
+  .todo-add {
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  .m-t {
+    height: 42px;
+  }
+
+  .todo-item {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+  }
+
+  .custom-checkbox::before {
+    width: 15px;
+    height: 15px;
+  }
+}
