@@ -52,8 +52,12 @@
 }
 
 .todos-active {
-  min-height: 595px;
-  margin-top: 67px;
+  min-height: 662px;
+}
+
+.m-t {
+  height: 67px;
+  background: #f3f3f4;
 }
 
 .todo-item {

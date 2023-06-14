@@ -9,6 +9,7 @@ const Completed = () => {
 
   return (
     <div className="todos-active">
+      <div className="m-t"/>
       {activeTodos.map(item => (
         <TodoItem
           key={item.id}
