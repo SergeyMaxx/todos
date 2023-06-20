@@ -12,8 +12,9 @@
   justify-content: center;
   font-family: "Microsoft JhengHei UI Light", serif;
   font-size: 150px;
-  color: #e9dad9;
-  background: #f3f3f4;
+  color: #ab9e9e;
+  background: #d2d2d2;
+  text-shadow: 1px 1px 1px #f2f2f2;
 }
 
 .todo-container {
@@ -25,25 +26,56 @@
 .todo-wrap {
   display: flex;
   justify-content: center;
-  background: #f2f2f3;
+  background: #d2d2d2;
+  padding: 0 20px;
 }
 
 .todo-input {
-  padding: 20px;
-  font-size: 20px;
+  min-width: 150px;
+  font-family: "Segoe UI", serif;
+  font-weight: 700;
+  padding: 10px 10px 12px 15px;
+  font-size: 25px;
+  line-height: 20px;
+  color: #6e6767;
+  text-shadow: 1px 1px 1px #f1f1f1;
   margin-right: 10px;
+  border: 1px solid #7f7f80;
+  border-radius: 10px;
+  background: #d0d0d1;
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset 3px 3px 5px #858484, inset -3px -3px 5px #f1f1f1;
+}
+
+.todo-input:focus {
+  box-shadow: inset 1px 1px 1px #727272, inset -1px -1px 1px #f2f2f2;
+  outline: none;
 }
 
 ::placeholder {
-  font-size: 20px;
-  color: #ead5d6;
+  font-family: "Segoe UI Light", serif;
+  font-size: 25px;
+  color: #6e6767;
+  font-weight: 500;
   font-style: italic;
+  text-shadow: 1px 1px 1px #f2f2f2;
 }
 
 .todo-add {
   padding: 0 40px;
   cursor: pointer;
   font-size: 30px;
+  transition: all 0.3s;
+  background: #d0d0d1;
+  border: 1px solid #7f7f80;
+  border-radius: 10px;
+  color: #6e6767;
+  text-shadow: 1px 1px 1px #f2f2f2;
+  box-shadow: inset  0 0 0 1px #f1f1f1;
+}
+
+.todo-add:active {
+  background: #b6b6b6;
 }
 
 .todo-list {
@@ -57,7 +89,7 @@
 
 .m-t {
   height: 67px;
-  background: #f3f3f4;
+  background: #d2d2d2;
 }
 
 .todo-item {
@@ -65,6 +97,11 @@
   border-bottom: 1px solid #e9dad9;
   font-family: "Segoe UI", serif;
   font-size: 33px;
+  cursor: grab;
+}
+
+.todo-item:active {
+  cursor: grabbing;
 }
 
 /*Чекбокс*/

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {useTodos} from './useTodos'
 
 const Nav = () => {
+  const {todos, setTodos} = useTodos()
   const [active, setActive] = useState<ActiveType>({
     All: false,
     Active: false,
@@ -14,15 +15,15 @@ const Nav = () => {
 
     for (let key in active) {
       active[key] = false
-    }
 
+    }
     setActive(prev => ({
       ...prev,
       [anchorElement.innerText]: true
     }))
+
   }
 
-  const {todos, setTodos} = useTodos()
   const activeTodos = todos.filter(todo => !todo.complete)
 
   const clearCompleted = (): void => {
