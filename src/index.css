@@ -71,7 +71,7 @@
   border-radius: 10px;
   color: #6e6767;
   text-shadow: 1px 1px 1px #f2f2f2;
-  box-shadow: inset  0 0 0 1px #f1f1f1;
+  box-shadow: inset 0 0 0 1px #f1f1f1;
 }
 
 .todo-add:active {
@@ -80,22 +80,27 @@
 
 .todo-list {
   min-height: 595px;
-  background: #fdfdfe;
+  background: #afafaf;
 }
 
 .todos-active {
-  min-height: 662px;
+  min-height: 652px;
+  background: #afafaf;
 }
 
 .m-t {
-  height: 67px;
+  height: 57px;
   background: #d2d2d2;
 }
 
 .todo-item {
   padding: 20px;
-  border-bottom: 1px solid #e9dad9;
+  border-bottom: 1px solid #6d6667;
+  box-shadow: inset 0 0 0 2px #d5d5d5;
   font-family: "Segoe UI", serif;
+  text-shadow: 1px 1px 1px #f0f0f0;
+  color: #575252;
+  font-weight: 700;
   font-size: 33px;
   cursor: grab;
 }
@@ -105,7 +110,6 @@
 }
 
 /*Чекбокс*/
-
 .real-checkbox {
   width: 0;
   height: 0;
@@ -119,8 +123,7 @@
   display: inline-block;
   width: 40px;
   height: 40px;
-  background: #ffffff;
-  border: 2px solid #cee0de;
+  background: #000;
   border-radius: 50%;
   vertical-align: sub;
   margin-right: 30px;
@@ -156,7 +159,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 25px;
-  height: 109px;
+  height: 119px;
+  background: #000;
 }
 
 .nav {
@@ -164,6 +168,7 @@
   align-items: center;
   justify-content: space-between;
   width: 400px;
+  height: 59px;
 }
 
 .nav-link {
@@ -174,7 +179,7 @@
 }
 
 .focus {
-  border: 1px solid #ead5d6;
+  box-shadow: 0 0 0 1px #ead5d6;
   border-radius: 5px;
 }
 
@@ -248,6 +253,6 @@
   }
 
   .todo-list {
-    min-height: 538px;
+    min-height: 464px;
   }
 }

@@ -4,21 +4,15 @@ import TodoItem from './todoItem'
 import {Reorder, AnimatePresence} from 'framer-motion'
 
 const Completed = () => {
-  const {todos, setTodos, toggle} = useTodos()
-  const activeTodos = todos.filter(todo => todo.complete)
+  const {todos, setTodos} = useTodos()
+  const completedTodos = todos.filter(todo => todo.complete)
 
   return (
-    <Reorder.Group axis='y' onReorder={setTodos} values={activeTodos}>
+    <Reorder.Group axis='y' onReorder={setTodos} values={completedTodos}>
       <AnimatePresence>
         <div className="todos-active">
           <div className="m-t"/>
-          {activeTodos.map(item => (
-            <TodoItem
-              key={item.id}
-              item={item}
-              toggle={toggle}
-            />
-          ))}
+          {completedTodos.map(t => <TodoItem key={t.id} todo={t}/>)}
         </div>
       </AnimatePresence>
     </Reorder.Group>

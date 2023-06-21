@@ -4,7 +4,7 @@ import TodoItem from './todoItem'
 import {Reorder, AnimatePresence} from 'framer-motion'
 
 const Active = () => {
-  const {todos, setTodos, toggle} = useTodos()
+  const {todos, setTodos} = useTodos()
   const activeTodos = todos.filter(todo => !todo.complete)
 
   return (
@@ -12,13 +12,7 @@ const Active = () => {
       <AnimatePresence>
         <div className="todos-active">
           <div className="m-t"/>
-          {activeTodos.map(item => (
-            <TodoItem
-              key={item.id}
-              item={item}
-              toggle={toggle}
-            />
-          ))}
+          {activeTodos.map(t => <TodoItem key={t.id} todo={t}/>)}
         </div>
       </AnimatePresence>
     </Reorder.Group>

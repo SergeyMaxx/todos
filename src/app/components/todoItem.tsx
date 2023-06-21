@@ -1,6 +1,7 @@
 import React from 'react'
 import {ITodo} from '../types/data'
 import {Reorder} from 'framer-motion'
+import {useTodos} from './useTodos'
 
 const variants = {
   initial: {
@@ -17,21 +18,23 @@ const variants = {
   }
 }
 
-const TodoItem = ({item, toggle}: TodoItemProps) => {
+const TodoItem = ({todo}: TodoItemProps) => {
+  const {toggle} = useTodos()
+
   return (
-    <Reorder.Item value={item} {...variants}>
+    <Reorder.Item value={todo} id={todo.id} {...variants}>
       <div className="todo-item">
         <label>
           <input
             className="real-checkbox"
             type="checkbox"
             name="coding-notes"
-            onChange={() => toggle(item.id)}
-            checked={item.complete}
+            onChange={() => toggle(todo.id)}
+            checked={todo.complete}
           />
           <span className="custom-checkbox"/>
           <span className="todo-title">
-          {item.title}
+          {todo.title}
         </span>
         </label>
       </div>
@@ -41,8 +44,7 @@ const TodoItem = ({item, toggle}: TodoItemProps) => {
 }
 
 interface TodoItemProps {
-  item: ITodo
-  toggle: (id: number) => void
+  todo: ITodo
 }
 
 export default TodoItem

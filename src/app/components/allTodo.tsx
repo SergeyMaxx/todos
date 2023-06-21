@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import TodoList from './todoList'
 import {useTodos} from './useTodos'
 import {ITodo} from '../types/data'
@@ -6,8 +6,6 @@ import {ITodo} from '../types/data'
 const AllTodo = () => {
   const [value, setValue] = useState('')
   const {todos, setTodos} = useTodos()
-  const inputRef = useRef<HTMLInputElement>(null)
-  const {toggle} = useTodos()
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
@@ -16,7 +14,7 @@ const AllTodo = () => {
   const addTodo = (): void => {
     if (value.trim()) {
       const newTodo: ITodo = {
-        id: Date.now(),
+        id: Math.random().toString(36).slice(2),
         title: value,
         complete: false
       }
@@ -24,12 +22,6 @@ const AllTodo = () => {
       setValue('')
     }
   }
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus()
-    }
-  }, [])
 
   return (
     <div className="todo-container">
@@ -40,16 +32,12 @@ const AllTodo = () => {
           placeholder="What needs to be done?"
           value={value}
           onChange={e => setValue(e.target.value)}
-          ref={inputRef}
         />
         <button className="todo-add" onClick={addTodo}>
           Add
         </button>
       </div>
-      <TodoList
-        items={todos}
-        toggle={toggle}
-      />
+      <TodoList/>
     </div>
   )
 }
