@@ -207,77 +207,6 @@
   background: transparent;
 }
 
-@media (max-width: 800px) {
-  .nav-link, .nav-button, .nav-item {
-    font-size: 16px;
-  }
-
-  .nav {
-    width: 200px;
-  }
-}
-
-@media (max-width: 500px) {
-  .nav-container {
-    display: flex;
-    flex-direction: column;
-    height: 150px;
-  }
-
-  .header {
-    height: 70px;
-    font-size: 50px;
-  }
-
-  .todo-input {
-    padding: 10px;
-    font-size: 16px;
-    margin-right: 10px;
-  }
-
-  ::placeholder {
-    font-size: 16px;
-  }
-
-  .todo-add {
-    padding: 0 20px;
-    font-size: 16px;
-  }
-
-  .m-t {
-    height: 42px;
-  }
-
-  .todo-item {
-    padding: 10px;
-    font-size: 16px;
-  }
-
-  .custom-checkbox {
-    width: 20px;
-    height: 20px;
-    margin-right: 15px;
-  }
-
-  .custom-checkbox::before {
-    width: 15px;
-    height: 15px;
-  }
-
-  .todo-list {
-    min-height: 464px;
-  }
-
-  .todos-active {
-    min-height: 506px;
-  }
-
-  .nav-container {
-    min-height: 164px;
-    margin-top: auto;
-  }
-}
-
 /*modal*/
 .modal {
   height: 100vh;
@@ -291,7 +220,7 @@
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: 0.2s;
+  transition: 0.3s;
   z-index: 1;
 }
 
@@ -311,8 +240,8 @@
   background: #565656;
   border: 2px solid #d0d0d1;
   border-radius: 10px;
-  transform: scale(0.3);
-  transition: all 0.2s;
+  transform: scale(1.5);
+  transition: all 0.3s;
 }
 
 .confirm-active {
@@ -367,4 +296,91 @@
 
 .confirm__cancel:hover {
   background: #444444;
+}
+
+@media (max-width: 800px) {
+  .nav-link, .nav-button, .nav-item {
+    font-size: 16px;
+  }
+
+  .nav {
+    width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+  }
+
+  .header {
+    height: 70px;
+    font-size: 50px;
+  }
+
+  .todo-input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  ::placeholder {
+    font-size: 16px;
+  }
+
+  .todo-add {
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  .m-t {
+    height: 62px;
+  }
+
+  .todo-item {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    box-shadow: inset 0 0 0 1px #fff;
+  }
+
+  .custom-checkbox::before {
+    width: 15px;
+    height: 15px;
+  }
+
+  .todo-list {
+    min-height: 464px;
+  }
+
+  .todos-active {
+    min-height: 526px;
+  }
+
+  .nav-container {
+    margin-top: auto;
+  }
+
+  .confirm {
+    width: 314px;
+  }
+
+  .confirm__question {
+    width: 250px;
+  }
+
+  .confirm__delete {
+    width: 250px;
+  }
+
+  .confirm__cancel {
+    width: 250px;
+  }
 }
