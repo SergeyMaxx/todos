@@ -39,7 +39,6 @@ const TodoItem = ({todo}: TodoItemProps) => {
         </label>
       </div>
     </Reorder.Item>
-
   )
 }
 

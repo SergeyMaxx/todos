@@ -9,15 +9,17 @@ import TodosProvider from './components/useTodos'
 
 function App() {
   return (
-    <TodosProvider>
-      <Header/>
-      <Switch>
-        <Route path={'/active'} component={Active}/>
-        <Route path={'/completed'} component={Completed}/>
-        <Route path={'/'} exact component={AllTodo}/>
-      </Switch>
-      <Nav/>
-    </TodosProvider>
+    <div className="app">
+      <TodosProvider>
+        <Header/>
+        <Switch>
+          <Route path={'/active'} component={Active}/>
+          <Route path={'/completed'} component={Completed}/>
+          <Route path={'/'} exact component={AllTodo}/>
+        </Switch>
+        <Nav/>
+      </TodosProvider>
+    </div>
   )
 }
 

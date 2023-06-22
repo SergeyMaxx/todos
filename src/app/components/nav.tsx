@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {useTodos} from './useTodos'
+import ModalConfirmation from './modalConfirmation'
 
 const Nav = () => {
   const {todos, setTodos} = useTodos()
+  const [modalActive, setModalActive] = useState(false)
   const [active, setActive] = useState<ActiveType>({
     All: false,
     Active: false,
@@ -30,6 +32,7 @@ const Nav = () => {
     const filteredTodos = todos.filter((todo: { complete: boolean }) => !todo.complete)
     localStorage.setItem('todos', JSON.stringify(filteredTodos))
     setTodos(filteredTodos)
+    setModalActive(false)
   }
 
   useEffect(() => {
@@ -67,10 +70,15 @@ const Nav = () => {
       </ul>
       <button
         className="nav-item nav-button"
-        onClick={clearCompleted}
+        onClick={() => setModalActive(true)}
       >
         Clear completed
       </button>
+      <ModalConfirmation
+        modalActive={modalActive}
+        setModalActive={setModalActive}
+        remove={clearCompleted}
+      />
     </div>
   )
 }

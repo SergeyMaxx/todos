@@ -6,8 +6,15 @@
   list-style: none;
 }
 
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #aeaeaf;
+}
+
 .header {
-  height: 190px;
+  height: 170px;
   display: flex;
   justify-content: center;
   font-family: "Microsoft JhengHei UI Light", serif;
@@ -27,7 +34,7 @@
   display: flex;
   justify-content: center;
   background: #d2d2d2;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 .todo-input {
@@ -89,16 +96,16 @@
 }
 
 .m-t {
-  height: 57px;
+  height: 77px;
   background: #d2d2d2;
 }
 
 .todo-item {
-  padding: 20px;
-  border-bottom: 1px solid #6d6667;
-  box-shadow: inset 0 0 0 2px #d5d5d5;
+  padding: 19px;
+  border-bottom: 1px solid #d0d0d0;
+  border-top: 2px solid #8c8c8c;
   font-family: "Segoe UI", serif;
-  text-shadow: 1px 1px 1px #f0f0f0;
+  text-shadow: 1px 1px 1px #dcdcdc;
   color: #575252;
   font-weight: 700;
   font-size: 33px;
@@ -121,12 +128,15 @@
 .custom-checkbox {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  background: #000;
+  width: 42px;
+  height: 42px;
+  box-shadow: inset 0 0 0 2px #fff;
+  background: #6d6667;
+  border: 1px solid #6d6667;
   border-radius: 50%;
   vertical-align: sub;
   margin-right: 30px;
+  cursor: pointer;
 }
 
 .custom-checkbox::before {
@@ -150,7 +160,8 @@
 }
 
 .real-checkbox:checked ~ .todo-title {
-  color: #d8d8d9;
+  color: #888787;
+  text-shadow: none;
   text-decoration: line-through;
 }
 
@@ -158,7 +169,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px;
+  margin-top: auto;
+  padding: 25px 50px;
   height: 119px;
   background: #000;
 }
@@ -255,4 +267,104 @@
   .todo-list {
     min-height: 464px;
   }
+
+  .todos-active {
+    min-height: 506px;
+  }
+
+  .nav-container {
+    min-height: 164px;
+    margin-top: auto;
+  }
+}
+
+/*modal*/
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.modal-active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 1;
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 380px;
+  height: 188px;
+  background: #565656;
+  border: 2px solid #d0d0d1;
+  border-radius: 10px;
+  transform: scale(0.3);
+  transition: all 0.2s;
+}
+
+.confirm-active {
+  transform: scale(1);
+}
+
+.confirm__question {
+  width: 316px;
+  height: 48px;
+  font-family: "Segoe UI", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #CFCFD0;
+  margin-top: 36px;
+}
+
+.confirm__delete {
+  width: 316px;
+  height: 32px;
+  margin-bottom: 10px;
+  background: #352627;
+  border: 1px solid #6D3631;
+  border-radius: 5px;
+  font-family: "Segoe UI", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #D35051;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.confirm__delete:hover {
+  background: #5b383c;
+}
+
+.confirm__cancel {
+  width: 316px;
+  height: 32px;
+  background: #2F2F30;
+  border: 1px solid #1c1c1c;
+  border-radius: 5px;
+  font-family: "Segoe UI", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #D6D6D7;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.confirm__cancel:hover {
+  background: #444444;
 }
